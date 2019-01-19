@@ -1,0 +1,25 @@
+tache durée fréquence tpsTotal
+t1 100 12 1200 
+t2 150	48 7200 
+t3 120 12 1440
+total temps 9840
+ou 3280 par personnes
+
+
+personne lovitudeTaches
+p1 t1 t2 t3
+	t1/2 = 600 reste 2680 t1 finie, t2/2(3600) reste 0 t2rest2680
+p2 t1 t3 t2
+	t1/2 = 600 reste 2680, t2 2680 t2 finie
+p3 t3 t2 t1
+	t3/1 reste 1840 t3 finie, t2/2(3600) reste 0 t2rest2680
+	
+pour chaque tache non finie triée par celle ou le moins de personne l'aime à celle ou le plus de personne l'aime
+	faire = tempsTache/nbPersonneQuiAimeAutant
+	si faire > tpsRestant
+		emploisDuTpsPersonneFini
+		tmps restant tache = tmpsTache - tmpsRestant
+	sinon
+		tmpsRestantPerso = tmpsRestantPersonne - faire
+		tacheFinie = true
+
